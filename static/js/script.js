@@ -1,5 +1,5 @@
-const GROQ_API_KEY = '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';
-const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
+const GROQ_API_KEY = '';
+const GROQ_API_URL = '';
 
 let userState = {
     investmentAmount: null,
