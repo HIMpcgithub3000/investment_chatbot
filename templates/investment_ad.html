@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Investment Advisor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="investment-header">
+            <h1>Smart Investment Advisor</h1>
+            <p>Personal Financial Guidance</p>
+        </div>
+
+        <div class="investment-dashboard">
+            <div class="profile-section">
+                <div class="profile-item">
+                    <div class="label">Risk Profile</div>
+                    <div class="value" id="riskProfile">Not Assessed</div>
+                </div>
+                <div class="profile-item">
+                    <div class="label">Investment Goal</div>
+                    <div class="value" id="investmentGoal">--</div>
+                </div>
+                <div class="profile-item">
+                    <div class="label">Time Horizon</div>
+                    <div class="value" id="timeHorizon">--</div>
+                </div>
+            </div>
+            
+            <div class="portfolio-summary">
+                <div class="summary-item">
+                    <div class="label">Total Investment</div>
+                    <div class="value" id="totalInvestment">₹0</div>
+                </div>
+                <div class="summary-item">
+                    <div class="label">Expected Returns</div>
+                    <div class="value" id="expectedReturns">0%</div>
+                </div>
+                <div class="summary-item">
+                    <div class="label">Risk Level</div>
+                    <div class="value" id="riskLevel">--</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-interface">
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will be added here by JavaScript -->
+            </div>
+            <div class="chat-input">
+                <input type="text" 
+                       id="user-input"
+                       placeholder="Type your message..." 
+                       onkeypress="if(event.key === 'Enter') sendMessage()"
+                       autocomplete="off">
+                <button onclick="sendMessage()" id="sendButton">Send</button>
+                <div class="loading-indicator" id="loadingIndicator" style="display: none;">
+                    Processing...
+                </div>
+            </div>
+        </div>
+           
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/simulator.js') }}"></script>
+</body>
+</html>
